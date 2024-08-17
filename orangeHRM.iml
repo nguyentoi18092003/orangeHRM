@@ -3,9 +3,14 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/actions" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/interfaces" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/reportConfig" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/testcases" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="ThuVienSelenium" level="project" />
+    <orderEntry type="library" name="libExtend5" level="project" />
   </component>
 </module>
