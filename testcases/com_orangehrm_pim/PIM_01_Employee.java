@@ -116,7 +116,7 @@ public class PIM_01_Employee extends BaseTest {
         Assert.assertEquals(personalDetails.getValueInDropdownByLabel("Nationality"),nationality);
         Assert.assertEquals(personalDetails.getValueInDropdownByLabel("Marital Status"),maritalStatus);
 
-        personalDetails.clickToAddButtonByLabel("Attachments");
+        personalDetails.clickToAddButtonPimByLabel("Attachments");
         personalDetails.uploadMultipleFiles(driver,fileNames);
         personalDetails.scrollToElementOnTop(driver, BaseElementUI.DYNAMIC_SAVE_BUTTON_BY_LABEL,"Add Attachment");
         personalDetails.waitForSpinnerIconInvisible();
@@ -144,7 +144,7 @@ public class PIM_01_Employee extends BaseTest {
         Assert.assertEquals(contactDetailsPage.getValueInTextBoxByLabel("Street 1"),street1);
         Assert.assertEquals(contactDetailsPage.getValueInDropdownByLabel("Country"),country);
 
-        contactDetailsPage.clickToAddButtonByLabel("Attachments");
+        contactDetailsPage.clickToAddButtonPimByLabel("Attachments");
         contactDetailsPage.uploadMultipleFiles(driver,fileNames);
         contactDetailsPage.scrollToElementOnTop(driver, BaseElementUI.DYNAMIC_SAVE_BUTTON_BY_LABEL,"Add Attachment");
         contactDetailsPage.waitForSpinnerIconInvisible();
@@ -162,7 +162,7 @@ public class PIM_01_Employee extends BaseTest {
         emergencyContactsPage=PageGeneratorManager.getEmergencyContacts(driver);
 
         emergencyContactsPage.waitForSpinnerIconInvisible();
-        emergencyContactsPage.clickToAddButtonByLabel("Assigned Emergency Contacts");
+        emergencyContactsPage.clickToAddButtonPimByLabel("Assigned Emergency Contacts");
         emergencyContactsPage.waitForSpinnerIconInvisible();
         emergencyContactsPage.enterToTextboxByLabel(emergencyName,"Name");
         emergencyContactsPage.enterToTextboxByLabel(emergencyRelationship,"Relationship");
@@ -174,7 +174,7 @@ public class PIM_01_Employee extends BaseTest {
         Assert.assertTrue(emergencyContactsPage.isSuccessMessageDisplayed("Successfully Saved"));
         Assert.assertTrue(emergencyContactsPage.isValueDisplayedAtColumnName("Name","1",emergencyName));
 
-        emergencyContactsPage.clickToAddButtonByLabel("Attachments");
+        emergencyContactsPage.clickToAddButtonPimByLabel("Attachments");
         emergencyContactsPage.uploadMultipleFiles(driver,fileNames);
         emergencyContactsPage.scrollToElementOnTop(driver, BaseElementUI.DYNAMIC_SAVE_BUTTON_BY_LABEL,"Add Attachment");
         emergencyContactsPage.waitForSpinnerIconInvisible();
@@ -192,7 +192,7 @@ public class PIM_01_Employee extends BaseTest {
         dependentsPage=PageGeneratorManager.getDependentsPage(driver);
 
         dependentsPage.waitForSpinnerIconInvisible();
-        dependentsPage.clickToAddButtonByLabel("Assigned Dependents");
+        dependentsPage.clickToAddButtonPimByLabel("Assigned Dependents");
         dependentsPage.waitForSpinnerIconInvisible();
         dependentsPage.enterToTextboxByLabel(dependentName,"Name");
         dependentsPage.selectToDropdownByLabel(dependentRelationship,"Relationship");
@@ -205,7 +205,7 @@ public class PIM_01_Employee extends BaseTest {
         Assert.assertTrue(dependentsPage.isSuccessMessageDisplayed("Successfully Saved"));
         Assert.assertTrue(dependentsPage.isValueDisplayedAtColumnName("Name","1",dependentName));
 
-        dependentsPage.clickToAddButtonByLabel("Attachments");
+        dependentsPage.clickToAddButtonPimByLabel("Attachments");
         dependentsPage.uploadMultipleFiles(driver,fileNames);
         dependentsPage.scrollToElementOnTop(driver, BaseElementUI.DYNAMIC_SAVE_BUTTON_BY_LABEL,"Add Attachment");
         dependentsPage.waitForSpinnerIconInvisible();
@@ -223,7 +223,7 @@ public class PIM_01_Employee extends BaseTest {
         personalDetails.waitForSpinnerIconInvisible();
         immigrationPage=PageGeneratorManager.getImmigrationPage(driver);
         immigrationPage.waitForSpinnerIconInvisible();
-        immigrationPage.clickToAddButtonByLabel("Assigned Immigration Records");
+        immigrationPage.clickToAddButtonPimByLabel("Assigned Immigration Records");
         immigrationPage.waitForSpinnerIconInvisible();
         immigrationPage.enterToTextboxByLabel(immigrationNumber,"Number");
         immigrationPage.enterToCanlenderTextboxByLabel(immigrationIssuedDate,"Issued Date");
@@ -235,7 +235,7 @@ public class PIM_01_Employee extends BaseTest {
         Assert.assertTrue(immigrationPage.isSuccessMessageDisplayed("Successfully Saved"));
         Assert.assertTrue(immigrationPage.isValueDisplayedAtColumnName("Number","1",immigrationNumber));
 
-        immigrationPage.clickToAddButtonByLabel("Attachments");
+        immigrationPage.clickToAddButtonPimByLabel("Attachments");
         immigrationPage.uploadMultipleFiles(driver,fileNames);
         immigrationPage.scrollToElementOnTop(driver, BaseElementUI.DYNAMIC_SAVE_BUTTON_BY_LABEL,"Add Attachment");
         immigrationPage.waitForSpinnerIconInvisible();
@@ -266,7 +266,7 @@ public class PIM_01_Employee extends BaseTest {
 
         Assert.assertTrue(jobPage.isSuccessMessageDisplayed("Successfully Updated"));
 
-        jobPage.clickToAddButtonByLabel("Attachments");
+        jobPage.clickToAddButtonPimByLabel("Attachments");
         jobPage.uploadMultipleFiles(driver,fileNames);
         jobPage.scrollToElementOnTop(driver, BaseElementUI.DYNAMIC_SAVE_BUTTON_BY_LABEL,"Add Attachment");
         jobPage.waitForSpinnerIconInvisible();
@@ -283,7 +283,7 @@ public class PIM_01_Employee extends BaseTest {
 
         salaryPage=PageGeneratorManager.getSalaryPage(driver);
         salaryPage.waitForSpinnerIconInvisible();
-        salaryPage.clickToAddButtonByLabel("Attachments");
+        salaryPage.clickToAddButtonPimByLabel("Attachments");
         salaryPage.uploadMultipleFiles(driver,fileNames);
         salaryPage.scrollToElementOnTop(driver, BaseElementUI.DYNAMIC_SAVE_BUTTON_BY_LABEL,"Add Attachment");
         salaryPage.waitForSpinnerIconInvisible();
@@ -301,7 +301,7 @@ public class PIM_01_Employee extends BaseTest {
 
         reportToPage=PageGeneratorManager.getReportToPage(driver);
         reportToPage.waitForSpinnerIconInvisible();
-        reportToPage.clickToAddButtonByLabel("Attachments");
+        reportToPage.clickToAddButtonPimByLabel("Attachments");
         reportToPage.uploadMultipleFiles(driver,fileNames);
         reportToPage.scrollToElementOnTop(driver, BaseElementUI.DYNAMIC_SAVE_BUTTON_BY_LABEL,"Add Attachment");
         reportToPage.waitForSpinnerIconInvisible();
@@ -320,7 +320,7 @@ public class PIM_01_Employee extends BaseTest {
 
         qualificationsPage=PageGeneratorManager.getQualificationsPage(driver);
         qualificationsPage.waitForSpinnerIconInvisible();
-        qualificationsPage.clickToAddButtonByLabel("Attachments");
+        qualificationsPage.clickToAddButtonPimByLabel("Attachments");
         qualificationsPage.uploadMultipleFiles(driver,fileNames);
         qualificationsPage.scrollToElementOnTop(driver, BaseElementUI.DYNAMIC_SAVE_BUTTON_BY_LABEL,"Add Attachment");
         qualificationsPage.waitForSpinnerIconInvisible();

@@ -53,6 +53,21 @@ public class PageGeneratorManager {
     public static SidebarPageObject getSidebarObject(WebDriver driver){
         return new SidebarPageObject(driver);
     }
+    public static AdminPageObject getAdminPageObject(WebDriver driver){
+        return new AdminPageObject(driver);
+    }
+    public static EmploymentStatusPageObject getEmploymentStatusPage(WebDriver driver){
+        return new EmploymentStatusPageObject(driver);
+    }
 
+    public static JobCategoriesPageObject getJobCategoriesPage(WebDriver driver){
+        return new JobCategoriesPageObject(driver);
+    }
+    public static JobTitlesPageObject getJobTitlesPage(WebDriver driver){
+        return new  JobTitlesPageObject(driver);
+    }
+    public static PayGradesPageObject getPayGradesPage (WebDriver driver){
+        return new PayGradesPageObject(driver);
+    }
 
 }

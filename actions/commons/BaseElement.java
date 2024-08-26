@@ -40,12 +40,18 @@ public class BaseElement extends BasePage {
         return getElementAttribute(driver, BaseElementUI.DYNAMIC_TEXTBOX_BY_LABEL, "_value", label);
     }
 
-    public void clickToAddButtonByLabel(String label) {
-        waitForElementClickable(driver, BaseElementUI.DYNAMIC_ADD_BUTTON, label);
-        clickToElement(driver, BaseElementUI.DYNAMIC_ADD_BUTTON, label);
+    public void clickToAddButtonAdminByLabel(String label) {
+        waitForElementClickable(driver, BaseElementUI.DYNAMIC_ADD_BUTTON_ADMIN_BY_LABEL, label);
+        clickToElement(driver, BaseElementUI.DYNAMIC_ADD_BUTTON_ADMIN_BY_LABEL, label);
+    }
+    public void clickToAddButtonPimByLabel(String label) {
+        waitForElementClickable(driver, BaseElementUI.DYNAMIC_ADD_BUTTON_PIM_BY_LABEL, label);
+        clickToElement(driver, BaseElementUI.DYNAMIC_ADD_BUTTON_PIM_BY_LABEL, label);
     }
 
-    public void clickToSaveButtonByLabel(String label) {
+
+
+        public void clickToSaveButtonByLabel(String label) {
         waitForElementClickable(driver, BaseElementUI.DYNAMIC_SAVE_BUTTON_BY_LABEL, label);
         clickToElement(driver, BaseElementUI.DYNAMIC_SAVE_BUTTON_BY_LABEL, label);
     }
@@ -75,4 +81,19 @@ public class BaseElement extends BasePage {
         int columnIndex = getListElementSize(driver, BaseElementUI.DYNAMIC_INDEX_BY_COLUMN_NAME, columnName) + 1;
         return isElementDisplayed(driver, BaseElementUI.DYNAMIC_ROW_VALUE_BY_COLUMN_INDEX_ROW_INDEX, rowIndex, String.valueOf(columnIndex), rowValue);
     }
+    public boolean isItemDropdownDisplayed(String itemCheck,String label){
+        waitForElementClickable(driver,BaseElementUI.DYNAMIC_DROPDOWN_PARENT_BY_LABEL,label);
+        clickToElement(driver,BaseElementUI.DYNAMIC_DROPDOWN_PARENT_BY_LABEL,label);
+        return isElementDisplayed(driver,BaseElementUI.DYNAMIC_VALUE_ITEM_DROPDOWN_BY_NAME,label,itemCheck);
+    }
+    public void clickToEditButton(String columnName, String rowIndex) {
+        int columnIndex = getListElementSize(driver, BaseElementUI.DYNAMIC_INDEX_BY_COLUMN_NAME, columnName) + 1;
+        scrollToElementOnDown(driver, BaseElementUI.DYNAMIC_EDIT_ICON_BY_COLUMN_INDEX_ROW_INDEX,rowIndex,String.valueOf(columnIndex));
+        waitForElementClickable(driver, BaseElementUI.DYNAMIC_EDIT_ICON_BY_COLUMN_INDEX_ROW_INDEX, rowIndex, String.valueOf(columnIndex));
+        clickToElement(driver,BaseElementUI.DYNAMIC_EDIT_ICON_BY_COLUMN_INDEX_ROW_INDEX,rowIndex,String.valueOf(columnIndex));
+
+
+    }
+
+
 }

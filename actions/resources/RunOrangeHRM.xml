@@ -10,9 +10,13 @@
 
     <parameter name="url" value="http://localhost:90/orangehrm5/orangehrm5/web/index.php/auth/login"/>
 
-    <test name="Run on Firefox">
+    <test name="Run on Firefox" >
         <parameter name="browser" value="firefox"/>
-        <classes><class name="com_orangehrm_pim.PIM_01_Employee"></class>
+
+        <classes>
+            <class name="com_orangehrm_pim.PIM_01_Employee"></class>
+<!--            <class name="com_orangehrm_admin.Admin_01_Job_Titles"></class>-->
+<!--                <class name="com_orangehrm_admin.Admin_02_Pay_Grades"></class>-->
         </classes>
     </test>
 
