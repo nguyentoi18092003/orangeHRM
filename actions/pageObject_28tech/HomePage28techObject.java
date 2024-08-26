@@ -1,18 +1,8 @@
 package pageObject_28tech;
 
-import com.aventstack.extentreports.Status;
 import commons.BasePage;
-import commons.BaseTest;
-import commons.PageGeneratortManager;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 import pageUIs_28tech.HomePage28techUI;
-import reportConfig.ExtentTestManager;
-
-import java.lang.reflect.Method;
 
 public class HomePage28techObject extends BasePage {
     WebDriver driver;

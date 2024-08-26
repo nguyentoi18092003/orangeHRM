@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pageUIs_orangehrm.BaseElementUI;
 
 import java.time.Duration;
 import java.util.List;
@@ -172,6 +173,9 @@ public class BasePage {
     public WebElement getWebElement(WebDriver driver,String locator){
         return driver.findElement(getByLocator(locator));
     }
+    public WebElement getWebElement(WebDriver driver,String locator,String ...restParams){
+        return driver.findElement(getByLocator(getDynamicLocator(locator,restParams)));
+    }
 
     public List<WebElement> getListWebElement(WebDriver driver, String locator){
         return driver.findElements(getByLocator(locator));
@@ -223,6 +227,20 @@ public class BasePage {
         sleepInSeconds(1);
         List<WebElement> allItems = new WebDriverWait(driver,Duration.ofSeconds(longTimeOut)).until(ExpectedConditions.
                 presenceOfAllElementsLocatedBy(getByLocator(childLocator)));
+
+        for (WebElement item : allItems) {
+            String textItems = item.getText();
+            if (textItems.equals(itemTextExpected)) {
+                item.click();
+                break;
+            }
+        }
+    }
+    public void selectItemDropdown(WebDriver driver,String parentLocator, String childLocator, String itemTextExpected,String... restParams) {
+        getWebElement(driver,parentLocator,restParams).click();
+        sleepInSeconds(1);
+        List<WebElement> allItems = new WebDriverWait(driver,Duration.ofSeconds(longTimeOut)).until(ExpectedConditions.
+                presenceOfAllElementsLocatedBy(getByLocator(getDynamicLocator(childLocator,restParams))));
 
         for (WebElement item : allItems) {
             String textItems = item.getText();
@@ -388,18 +406,28 @@ public class BasePage {
         sleepInSecond(2);
         ((JavascriptExecutor) driver).executeScript("arguments[0].setAttribute('style', arguments[1])", element, originalStyle);
     }
-
+    //Chi can Element xuat hiẹn trong DOM la click dc khong nhat thiet la phai click xuat hien tren man hinh(Kieu dung trong TH phan tu bi che khuat i)
     public void clickToElementByJS(WebDriver driver,String locator) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", getWebElement(driver,locator));
+        sleepInSecond(3);
+    }
+    public void clickToElementByJS(WebDriver driver,String locator,String ...restParams) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", getWebElement(driver,getDynamicLocator(locator,restParams)));
         sleepInSecond(3);
     }
 
     public void scrollToElementOnTop(WebDriver driver,String locator) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", getWebElement(driver,locator));
     }
+    public void scrollToElementOnTop(WebDriver driver,String locator,String ...restParams) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", getWebElement(driver,getDynamicLocator(locator,restParams)));
+    }
 
     public void scrollToElementOnDown(WebDriver driver,String locator) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(false);", getWebElement(driver,locator));
+    }
+    public void scrollToElementOnDown(WebDriver driver,String locator,String ...restParams) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(false);", getWebElement(driver,getDynamicLocator(locator,restParams)));
     }
 
 //    public void setAttributeInDOM(WebDriver driver,String locator, String attributeName, String attributeValue) {
@@ -471,15 +499,15 @@ public class BasePage {
         });
     }
 
-//    public void uploadMultipleFiles(WebDriver driver,String ...fileNames){
-//        String filePath=GlobalConstants.UPLOAD_PATH;
-//        String fullFileName="";
-//        for(String file:fileNames){
-//            fullFileName=fullFileName+filePath+file+"\n";//can \n mk ms upload dc nhieu file xem them trong phan cu
-//        }
-//        fullFileName=fullFileName.trim();// ham trim de xoa \n o dau va cuoi
-//        getWebElement(driver, BaseElementUI.UPLOAD_FILE_TYPE).sendKeys(fullFileName);
-//    }
+    public void uploadMultipleFiles(WebDriver driver,String ...fileNames){
+        String filePath=GlobalConstants.UPLOAD_PATH;
+        String fullFileName="";
+        for(String file:fileNames){
+            fullFileName=fullFileName+filePath+file+"\n";//can \n mk ms upload dc nhieu file xem them trong phan cu
+        }
+        fullFileName=fullFileName.trim();// ham trim de xoa \n o dau va cuoi
+        getWebElement(driver, BaseElementUI.UPLOAD_FILE_TYPE).sendKeys(fullFileName);
+    }
 
     private long longTimeOut=GlobalConstants.LONG_TIMEOUT;
     private long shortTimeOut=GlobalConstants.SHORT_TIMEOUT;

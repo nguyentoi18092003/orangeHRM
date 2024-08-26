@@ -2,7 +2,7 @@ package com_28tech;
 
 import com.aventstack.extentreports.Status;
 import commons.BaseTest;
-import commons.PageGeneratortManager;
+import commons.PageGeneratortManager28tech;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -25,7 +25,7 @@ public class Test28tech extends BaseTest {
     public void beforeClass(String browserName){
         this.browserName=browserName;
         driver=getBrowserDriver(browserName);
-        homePage28tech= PageGeneratortManager.gethomePage28tech(driver);
+        homePage28tech= PageGeneratortManager28tech.gethomePage28tech(driver);
 
     }
 
