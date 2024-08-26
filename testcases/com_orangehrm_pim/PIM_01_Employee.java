@@ -333,7 +333,7 @@ public class PIM_01_Employee extends BaseTest {
     @AfterClass
     public void afterClass()
     {
-       //closeBrowser();
+       closeBrowser();
 
     }
     private String userName;
