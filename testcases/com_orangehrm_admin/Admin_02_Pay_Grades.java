@@ -55,7 +55,7 @@ public class Admin_02_Pay_Grades extends BaseTest {
         adminPage=PageGeneratorManager.getAdminPageObject(driver);
         adminPage.waitForSpinnerIconInvisible();
         adminPage.clickToSubMenuByName("Job ");
-        //adminPage.waitForSpinnerIconInvisible();
+
         adminPage.clickToItemSubMenuByName("Job ","Pay Grades");
         adminPage.waitForSpinnerIconInvisible();
 

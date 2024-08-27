@@ -56,7 +56,7 @@ public class Admin_04_Job_Categories extends BaseTest {
         adminPage = PageGeneratorManager.getAdminPageObject(driver);
         adminPage.waitForSpinnerIconInvisible();
         adminPage.clickToSubMenuByName("Job ");
-        //adminPage.waitForSpinnerIconInvisible();
+
         adminPage.clickToItemSubMenuByName("Job ", "Job Categories");
         adminPage.waitForSpinnerIconInvisible();
 

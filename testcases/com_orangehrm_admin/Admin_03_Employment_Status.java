@@ -54,7 +54,6 @@ public class Admin_03_Employment_Status extends BaseTest {
         adminPage=PageGeneratorManager.getAdminPageObject(driver);
         adminPage.waitForSpinnerIconInvisible();
         adminPage.clickToSubMenuByName("Job ");
-        //adminPage.waitForSpinnerIconInvisible();
         adminPage.clickToItemSubMenuByName("Job ","Employment Status");
         adminPage.waitForSpinnerIconInvisible();
 
