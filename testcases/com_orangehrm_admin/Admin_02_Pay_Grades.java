@@ -49,7 +49,7 @@ public class Admin_02_Pay_Grades extends BaseTest {
     }
     @Test
     public void Pay_Grade_01_Add_Pay_Grades(Method method){
-        ExtentTestManager.startTest(method.getName()+"- Run on "+browserName.toUpperCase(),"Employee_01_Add_New");
+        ExtentTestManager.startTest(method.getName()+"- Run on "+browserName.toUpperCase(),"Pay_Grade_01_Add_Pay_Grades");
         dashboardPage.clickToSidebarLinkByText("Admin");
         dashboardPage.waitForSpinnerIconInvisible();
         adminPage=PageGeneratorManager.getAdminPageObject(driver);
@@ -73,7 +73,7 @@ public class Admin_02_Pay_Grades extends BaseTest {
     }
     @Test
     public void Pay_Grade_02_Check_Pay_Grades_In_PIM (Method method){
-        ExtentTestManager.startTest(method.getName()+"- Run on "+browserName.toUpperCase(),"Employee_01_Add_New");
+        ExtentTestManager.startTest(method.getName()+"- Run on "+browserName.toUpperCase(),"Pay_Grade_02_Check_Pay_Grades_In_PIM");
         payGradesPage.clickToSidebarLinkByText("PIM");
         payGradesPage.waitForSpinnerIconInvisible();
 

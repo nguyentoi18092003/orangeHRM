@@ -14,9 +14,11 @@
         <parameter name="browser" value="firefox"/>
 
         <classes>
-            <class name="com_orangehrm_pim.PIM_01_Employee"></class>
+<!--            <class name="com_orangehrm_pim.PIM_01_Employee"></class>-->
 <!--            <class name="com_orangehrm_admin.Admin_01_Job_Titles"></class>-->
 <!--                <class name="com_orangehrm_admin.Admin_02_Pay_Grades"></class>-->
+<!--            <class name="com_orangehrm_admin.Admin_03_Employment_Status"></class>-->
+                <class name="com_orangehrm_admin.Admin_04_Job_Categories"></class>
         </classes>
     </test>
 
